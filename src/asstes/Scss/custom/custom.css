@@ -1,0 +1,185 @@
+body {
+  font-size: 18px;
+}
+
+:invalid {
+  outline: none;
+  color: red;
+}
+
+.font-prime {
+  font-family: "Lora", serif;
+}
+
+.font-second {
+  font-family: "DM Sans", serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+.rotate90 {
+  transform: rotate(90deg);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+button {
+  border: none;
+}
+
+figure {
+  display: inline-block;
+  margin: 0;
+  width: 100%;
+}
+
+.midBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.betBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.h1,
+h1 {
+  font-weight: bold;
+  font-family: "Lora", serif;
+}
+
+.h2,
+h2 {
+  font-weight: bold;
+  font-family: "Lora", serif;
+}
+
+.h3,
+h3 {
+  font-weight: bold;
+  font-family: "Lora", serif;
+}
+
+.h4,
+h4 {
+  font-weight: bold;
+  font-family: "Lora", serif;
+}
+
+.h5,
+h5 {
+  font-weight: bold;
+  font-family: "Lora", serif;
+}
+
+.h6,
+h6 {
+  font-weight: bold;
+  font-family: "Lora", serif;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border-radius: 10px;
+}
+
+.text-align-center {
+  text-align: center !important;
+}
+
+.title {
+  font-size: 36px;
+  font-family: "Lora", serif;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.sub-title {
+  color: #76787B;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Gantari", sans-serif;
+}
+
+/* ============= Button CSS ============= */
+button {
+  padding: 14.5px 49.5px;
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+button:hover {
+  background-color: #ffffff;
+  color: #000000;
+  transition: 0.3s all ease-in-out;
+}
+
+.b1 {
+  padding: 14.5px 49.5px;
+  background: transparent;
+  border: 1px solid #000000;
+  color: #2C2C2C;
+  text-transform: capitalize;
+}
+.b1:hover {
+  background-color: #2C2C2C;
+  color: #ffffff;
+  transition: 0.3s all ease-in-out;
+}
+
+.themeButton {
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-block;
+  font-size: 18px;
+  font-family: "Gantari", sans-serif;
+}
+@media screen and (max-width: 576px) {
+  .themeButton {
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+}/*# sourceMappingURL=custom.css.map */

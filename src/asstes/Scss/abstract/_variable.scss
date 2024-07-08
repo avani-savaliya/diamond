@@ -1,0 +1,109 @@
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// $font-prime : 'Public Sans',
+// sans-serif;
+// $font-second : 'Jost',
+// sans-serif;
+// @font-face {
+//   font-family: "Chong Modern W01";
+//   src: url("../../font/28f458dff973da35954dd389155b9c57.eot");
+//   src:
+//     url("../../font/28f458dff973da35954dd389155b9c57.eot") format("embedded-opentype"),
+//     url("../../font/28f458dff973da35954dd389155b9c57.woff") format("woff"),
+//     url("../../font/28f458dff973da35954dd389155b9c57.woff2") format("woff2"),
+//     url("../../font//28f458dff973da35954dd389155b9c57.svg") format("svg");
+//   font-weight: normal;
+//   font-style: normal;
+//   font-display: swap;
+// }
+$font-prime: "Lora", serif;
+$font-second:"DM Sans", serif;
+$font-third:"Gantari", sans-serif;
+
+$prime: #2C2C2C;
+$second: #76787B;
+$third:#C88551;
+$transparent: transparent;
+
+//success
+$success: #198754;
+$success-light: #d1e7dd;
+
+//blue
+$blue: #0d6efd;
+$blue-light: #cfe2ff;
+
+//red
+$danger: #dc3545;
+$danger-light: #f8d7da;
+
+//yellow
+$warning: #ffc107;
+$warning-light: #fff3cd;
+
+// new
+$dark: #000000;
+$light: #ffffff;
+
+$themeAll: (
+  // new
+  "third":$third,
+  "dark": $dark,
+  "light": $light,
+  "transparent": $transparent,
+  "success": $success,
+  "success-light": $success-light,
+  "blue": $blue,
+  "blue-light": $blue-light,
+  "danger": $danger,
+  "danger-light": $danger-light,
+  "warning": $warning,
+  "warning-light": $warning-light
+);
+
+$angles: ("top", "right", "bottom", "left");
+
+$responsive: (
+  "xsm": 400,
+  "smm": 450,
+  "sm": 576,
+  "md": 768,
+  "lg": 992,
+  "xl": 1200,
+  "xxl": 1400
+);
+
+$xsm: 400px;
+$smm: 450px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+$suns-font: "Source Sans 3", sans-serif;
+
+$transition-3: 0.3s;
+$transition-2: 0.2s;
+$transition-4: 0.4s;
+$transition-5: 0.5s;
+
+$prime-shadow: 0 0 12px #0f223a1f;
+
+@mixin midels($display, $jContent, $align) {
+  display: $display;
+  justify-content: $jContent;
+  align-items: $align;
+}
+
+@mixin maxMediaQuery($breakpoint) {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin minMediaQuery($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}

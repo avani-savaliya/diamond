@@ -1,0 +1,924 @@
+@import "../abstract/variable";
+
+// ====================== header start ======================
+.sticky.show {
+    transform: translateY(0);
+}
+.mainTopbar {
+    background-color: $dark;
+    & .topBar {
+        color: $light;
+        text-align: center;
+        padding: 10px;
+        display: flex;
+        & span {
+            color: $light;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: capitalize;
+            text-underline-offset: 3px;
+            font-family: $font-second;
+
+            & p {
+                padding-left: 10px;
+                font-family: $font-second;
+                text-decoration: underline #ffa236;
+                text-underline-offset: 5px;
+            }
+        }
+    }
+}
+.mainHeader {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: $light;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    & .mainNavigation {
+        background-color: $light;
+        display: flex;
+        justify-content: center;
+        & .logobar {
+            width: 130px;
+        }
+
+        & .mainMenu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px 25px;
+            & li {
+                position: relative;
+                & a {
+                    font-family: $font-third;
+                    padding: 10px 14px;
+                    color: $dark;
+                    font-size: 16px;
+                    @include maxMediaQuery($xl) {
+                        padding: 10px 8px !important;
+                        font-size: 11px !important;
+                    }
+                    @include maxMediaQuery($lg) {
+                        padding: 10px 7px !important;
+                        font-size: 12px !important;
+                    }
+                    @include maxMediaQuery($xxl) {
+                        padding: 10px 6px !important;
+                        font-weight: 500 !important;
+                        font-size: 12px !important;
+                    }
+                }
+            }
+        }
+        & .iconBar {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            i {
+                padding: 10px 18px;
+                font-size: 22px;
+                @include maxMediaQuery($xl) {
+                    padding: 10px 7px !important;
+                }
+            }
+        }
+        & .togglebar {
+            display: none;
+            text-align: center;
+        }
+    }
+}
+
+// ====================== header end ======================
+
+// =================  bannerarea stat===================
+
+.videoArea {
+    height: 900px;
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(16, 17, 19, 0.5);
+        z-index: 1;
+    }
+    & .bannerInfo {
+        padding: 200px 0;
+        z-index: 100;
+        text-align: center;
+        & .title {
+            font-size: 67px;
+            margin: 20px 0;
+            display: inline-block;
+            font-family: $font-prime;
+            @include maxMediaQuery($lg) {
+                font-size: 39px;
+            }
+        }
+        & p {
+            color: white !important;
+            font-size: 22px;
+            letter-spacing: 0.2px;
+            font-family: $font-third;
+            font-weight: 500;
+
+            @include maxMediaQuery($lg) {
+                font-size: 18px;
+            }
+        }
+        & .commonBtn {
+            & button {
+                border-radius: 10px;
+            }
+        }
+    }
+    & .videoPlayer {
+        object-fit: cover;
+        height: 100% !important;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+// =================  bannerarea end  =======================
+@include maxMediaQuery($lg) {
+    .navBar {
+        display: none !important;
+    }
+    .iconBar {
+        display: none !important;
+    }
+    .togglebar {
+        display: block !important;
+    }
+    .mainMenu li a {
+        padding: 10px 11px !important;
+        font-size: 13px;
+    }
+    .mainTopbar {
+        display: none !important;
+    }
+    .logobar {
+        margin: 10px 0px;
+    }
+}
+.mob-navBar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 100%;
+    background-color: $light;
+    padding: 50px 40px 15px;
+    overflow-y: auto;
+    max-height: 100vh;
+    z-index: 999;
+    transition: 0.3s !important;
+
+    & .icon {
+        position: absolute;
+        top: 5%;
+        right: 10%;
+    }
+    & .logoBar {
+        width: 180px;
+    }
+    & .mainMenu {
+        flex-direction: column;
+        display: unset !important;
+        margin-top: 20px;
+
+        & li {
+            position: relative;
+            padding: 10px 0px;
+        }
+
+        & a {
+            display: flex;
+            text-decoration: unset;
+            justify-content: space-between;
+            color: white;
+            font-weight: 500;
+            border-bottom: 1px solid #777;
+        }
+    }
+}
+
+// .mob-navBar .mainMenu li:hover .subMenu {
+//     transform: unset;
+// }
+
+// .mob-navBar .subMenu {
+//     position: unset;
+//     background-color: #000;
+//     margin-top: 0px;
+//     padding: 5px 22px;
+//     opacity: unset;
+//     visibility: unset;
+//     transform: unset;
+//     display: none;
+//     transition: none;
+//     z-index: unset;
+
+//     & li {
+//         border-bottom: unset;
+//         padding: 0;
+//     }
+
+//     a {
+//         color: white;
+//         border-bottom: unset;
+//     }
+// }
+
+.mob-navBar .mainMenu li a i {
+    transition: transform 0.5s ease;
+}
+
+.mob-navBar .mainMenu li a span {
+    display: inline-flex;
+}
+
+.mob-navBar .mainMenu li:hover a i {
+    transform: rotate(90deg);
+}
+
+.mob-navBar.onSidebar {
+    transform: translateX(0) !important;
+}
+
+.mob-navBar.offSidebar {
+    transform: translateX(-103%) !important;
+}
+
+// ================= ShopArea start =====================
+
+@include minMediaQuery($xl) {
+    .col-10-custom {
+        flex: 0 0 auto;
+        width: 10%;
+    }
+}
+.DiamondShopArea {
+    font-family: $font-prime;
+
+    & .shopImgBox {
+        position: relative;
+        display: inline-block;
+        & .diamondImg {
+            display: flex;
+            justify-content: center;
+            width: 100px;
+            padding: 20px;
+            border: 1px solid #e1e5ec;
+            border-radius: 50px;
+            height: 100px;
+            & img {
+                width: unset;
+            }
+        }
+    }
+
+    p {
+        font-size: 16px;
+        font-family: $font-third;
+        font-weight: 400;
+        color: #2c2c2c;
+    }
+}
+
+// ========================= ShopArea end ===================
+
+// ===================== FeatureSection start =============================
+.FeatureSection {
+    & .FeatureHeader {
+        @include maxMediaQuery($xl) {
+            .title {
+                font-size: 28px !important;
+            }
+            .sub-title {
+                font-size: 17px !important;
+            }
+        }
+        @include maxMediaQuery($lg) {
+            .title {
+                font-size: 28px !important;
+            }
+            .sub-title {
+                font-size: 17px !important;
+            }
+        }
+    }
+    & .FeatureMainbox {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        & .featureImg {
+            position: relative;
+            overflow: hidden;
+            & img {
+                width: 100%;
+                transition: 3s;
+            }
+            &:hover img {
+                transform: scale(1.2);
+            }
+        }
+        & .featureText {
+            position: absolute;
+            bottom: 0%;
+            width: 100%;
+            & p {
+                background-color: #f6f5f3;
+                width: 100%;
+                text-align: center;
+                font-weight: 600;
+                font-size: 17px;
+                font-family: $font-third;
+                color: $prime;
+                padding: 16px 0px;
+            }
+        }
+    }
+    & .owl-carousel .owl-nav {
+        display: block !important;
+    }
+    & .owl-nav button {
+        position: absolute !important;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    & button.owl-prev {
+        height: 40px;
+        width: 40px;
+        left: 0%;
+        display: flex;
+        justify-content: center;
+        border-radius: 50% !important;
+        line-height: 1px;
+        color: $dark !important;
+        background: #f0f0ef !important;
+        & span {
+            font-size: 35px;
+            position: absolute;
+            top: -20%;
+            left: 39%;
+        }
+    }
+    & button.owl-next {
+        height: 40px;
+        width: 40px;
+        right: 0%;
+        display: flex;
+        transform: translate(50%, -46%);
+        border-radius: 50% !important;
+        justify-content: center;
+        border-radius: 50%;
+        line-height: 1px;
+        color: $dark !important;
+        background: #f0f0ef !important;
+        & span {
+            font-size: 35px;
+            position: absolute;
+            top: -20%;
+            left: 39%;
+        }
+    }
+}
+.owl-theme .owl-nav [class*="owl-"]:hover {
+    color: $dark;
+}
+
+// ===================== FeatureSection end =============================
+
+// =================colectionArea strat==================================
+.collectionSection {
+    & .collectioneHeader {
+        @include maxMediaQuery($xl) {
+            .title {
+                font-size: 28px !important;
+            }
+            .sub-title {
+                font-size: 17px !important;
+            }
+        }
+        @include maxMediaQuery($lg) {
+            .title {
+                font-size: 28px !important;
+            }
+            .sub-title {
+                font-size: 17px !important;
+            }
+        }
+    }
+    & .CollectionMainbox {
+        position: relative;
+        justify-content: center;
+        & .collectionImg {
+            position: relative;
+            overflow: hidden;
+            & img {
+                width: 100%;
+                transition: 3s;
+            }
+            &:hover img {
+                transform: scale(1.2);
+            }
+        }
+    }
+    .collectionText {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        background-color: #f7f7f7;
+        font-weight: 600;
+        font-family: $font-third;
+        font-size: 18px;
+        line-height: 50px;
+    }
+
+    .owl-carousel .owl-nav {
+        display: block !important;
+    }
+    & .owl-nav button {
+        position: absolute !important;
+        top: 50%;
+        display: flex;
+        font-size: 25px !important;
+        transform: translate(-50%, -50%);
+        &.owl-prev {
+            height: 40px;
+            width: 40px;
+            left: -0%;
+            display: flex;
+            justify-content: center;
+            border-radius: 50%;
+            line-height: 1px;
+            color: $dark !important;
+            background: #f0f0ef !important;
+            & span {
+                top: -13px;
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                font-size: 40px;
+            }
+        }
+        &.owl-next {
+            height: 40px;
+            width: 40px;
+            right: -0%;
+            display: flex;
+            transform: translate(50%, -60%);
+            justify-content: center;
+            border-radius: 50%;
+            line-height: 1px;
+            color: $dark !important;
+            background: #f0f0ef !important;
+            & span {
+                top: -13px;
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                font-size: 40px;
+            }
+        }
+    }
+
+    .owl-theme .owl-nav [class*="owl-"]:hover {
+        color: $dark;
+    }
+}
+
+// =================colectionArea end==================================
+
+// ============= FeatureItemSection start ==============================
+.FeatureItemSection {
+    & .FeatureItemImg {
+        & img {
+            width: 100%;
+        }
+    }
+    & .FeatureItemHeader {
+        @include maxMediaQuery($xl) {
+            .title {
+                font-size: 28px !important;
+            }
+            .sub-title {
+                font-size: 17px !important;
+            }
+        }
+        @include maxMediaQuery($lg) {
+            .title {
+                font-size: 28px !important;
+            }
+            .sub-title {
+                font-size: 17px !important;
+            }
+        }
+    }
+}
+// ============= FeatureItemSection end ==============================
+
+// ======================offerSection start =============================
+.offerSection {
+    & .offerHeader {
+        @include maxMediaQuery($xl) {
+            .title {
+                font-size: 28px !important;
+            }
+            .sub-title {
+                font-size: 17px !important;
+            }
+        }
+        @include maxMediaQuery($lg) {
+            .title {
+                font-size: 28px !important;
+            }
+            .sub-title {
+                font-size: 17px !important;
+            }
+        }
+    }
+}
+// ======================offerSection end  =============================
+
+// ========================= OurCollectionArea start =======================
+.OurCollectionArea {
+    position: relative;
+    overflow: hidden;
+    & .ourCollectionImg {
+        & img {
+            width: 100%;
+        }
+    }
+    & .ourText {
+        display: inline-block;
+
+        & h1 {
+            font-size: 30px;
+            font-family: $font-prime;
+            color: $prime;
+        }
+        & p {
+            color: $second;
+            font-weight: 400;
+            font-family: $font-third;
+            font-size: 18px;
+            width: 471px;
+        }
+    }
+}
+
+// ========================= OurCollectionArea end =========================
+
+// ========================= Diamondcategory start =======================
+
+// .diamondMainCategory {
+//     padding: 50px 0;
+//     & p {
+//         &.tabnav {
+//             font-size: 1.1em;
+//             text-transform: uppercase;
+//             text-align: right;
+//             & a {
+//                 text-decoration: none;
+//                 color: #999;
+//             }
+//         }
+//     }
+//     &.tabs {
+//         position: relative;
+//         display: block;
+//         width: 40em;
+//         height: 15em;
+//         margin: 2em auto;
+//         & section {
+//             position: absolute;
+//             display: block;
+//             top: 1.8em;
+//             left: 0;
+//             height: 12em;
+//             padding: 10px 20px;
+//             background-color: #ddd;
+//             border-radius: 5px;
+//             box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+//             z-index: 0;
+//             &:first-child {
+//                 z-index: 1;
+//             }
+//             & h2 {
+//                 position: absolute;
+//                 font-size: 1em;
+//                 font-weight: normal;
+//                 width: 120px;
+//                 height: 1.8em;
+//                 top: -1.8em;
+//                 left: 10px;
+//                 padding: 0;
+//                 margin: 0;
+//                 color: #999;
+//                 background-color: #ddd;
+//                 border-radius: 5px 5px 0 0;
+//                 & a {
+//                     display: block;
+//                     width: 100%;
+//                     line-height: 1.8em;
+//                     text-align: center;
+//                     text-decoration: none;
+//                     color: inherit;
+//                     outline: 0 none;
+//                 }
+//             }
+//             &:nth-child(2) {
+//                 h2 {
+//                     left: 132px;
+//                 }
+//             }
+//             &:nth-child(3) {
+//                 h2 {
+//                     left: 254px;
+//                 }
+//             }
+//         }
+//     }
+//     & .tabs section,
+//     & .tabs section h2 {
+//         transition: all 500ms ease;
+//     }
+//     & .tabs section:target,
+//     & .tabs section:target h2 {
+//         color: #333;
+//         background-color: #fff;
+//         z-index: 2;
+//     }
+// }
+
+.diamondMainCategory {
+    padding: 50px 0;
+
+    & p {
+        & .tabnav {
+            position: absolute;
+            top: -33%;
+            right: 0;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            text-align: right;
+            & a {
+                text-decoration: none;
+                color: #999;
+            }
+        }
+    }
+    & .tabButton {
+        display: flex;
+        text-align: center;
+        border-bottom: 1px solid #e5e5e5;
+        & button {
+            color: #727272;
+            padding: 10px 15px;
+            font-weight: 600;
+            font-size: 16px;
+            font-family: $font-third;
+            line-height: 21.92px;
+            &.active {
+                color: black;
+            }
+        }
+        @include maxMediaQuery($md) {
+            display: inline;
+        }
+    }
+    & .tabnav {
+        font-size: 1.1em;
+        text-transform: uppercase;
+        text-align: right;
+        & a {
+            text-decoration: none;
+            color: #999;
+            & i {
+                font-size: 30px;
+            }
+        }
+    }
+    & .diamondShapeTitle {
+        font-size: 18px;
+        font-weight: 600;
+        font-family: $font-third;
+        line-height: 24.66px;
+    }
+    & article.tabs {
+        position: relative;
+        display: block;
+        height: 200px;
+
+        & section {
+            position: absolute;
+            display: flex;
+            top: 1.8em;
+            width: 100%;
+            left: 0;
+            height: auto;
+            padding: 10px 20px;
+            border-radius: 5px;
+            z-index: 0;
+            &:first-child {
+                z-index: 1;
+            }
+            &:nth-child(2) h2 {
+                left: 132px;
+            }
+            &:nth-child(3) h2 {
+                left: 254px;
+            }
+            & .shopImgBox {
+                position: relative;
+                display: inline-block;
+                & .diamondImg {
+                    display: flex;
+                    justify-content: center;
+                    width: 70px;
+                    padding: 15px;
+                    border: 1px solid #e1e5ec;
+                    border-radius: 50px;
+                    height: 70px;
+                    & img {
+                        width: unset;
+                    }
+                }
+                & .diamondCategoryName {
+                    text-transform: capitalize;
+                    text-align: center;
+                    font-weight: 400;
+                    font-family: $font-third;
+                    font-size: 14px;
+                    line-height: 19.18px;
+                    margin-top: 10px;
+                }
+            }
+            & .diamondOriginBtn {
+                border-radius: 50px;
+                width: 48%;
+                margin-right: 9.5px;
+                font-weight: 600;
+                line-height: 21.92px;
+                font-size: 16px;
+                color: $dark;
+                border: 1px solid #d6d6d6;
+            }
+            & .carat {
+            }
+            & .numberVal {
+                & input {
+                    border-color: transparent;
+                    background-color: #f2f3f8;
+                    font-weight: 600;
+                    font-size: 12px;
+                    font-family: $font-third;
+                    line-height: 16.44px;
+                    text-align: center;
+                    border-radius: 6px;
+                    padding: 3px 0;
+                }
+            }
+            & .range-slider {
+                position: relative;
+                width: 100%;
+                height: 4px;
+                border-radius: 15px;
+                background: transparent linear-gradient(90deg, #e8e8e8 0%, #e8e8e8 100%) 0% 0% no-repeat padding-box;
+                & .progress {
+                    position: absolute;
+                    left: 25%;
+                    right: 0%;
+                    height: 100%;
+                    border-radius: 15px;
+                    background: transparent linear-gradient(90deg, $third 0%, $third 100%) 0% 0% no-repeat padding-box;
+                }
+                & input[type="range"] {
+                    position: absolute;
+                    width: 100%;
+                    height: 4px;
+                    -webkit-appearance: none;
+                    pointer-events: none;
+                    background: none;
+                    outline: none;
+                }
+                & .range-min::-webkit-slider-thumb {
+                    pointer-events: auto;
+                    -webkit-appearance: none;
+                    width: 20px;
+                    height: 20px;
+                    background: $third 0% 0% no-repeat padding-box;
+                    // border: 2px solid $third;
+                    border-radius: 20px;
+                    opacity: 1;
+                }
+                & .range-max::-webkit-slider-thumb {
+                    pointer-events: auto;
+                    -webkit-appearance: none;
+                    width: 20px;
+                    height: 20px;
+                    background: $third 0% 0% no-repeat padding-box;
+                    // border: 2px solid $third;
+                    border-radius: 20px;
+                    opacity: 1;
+                }
+            }
+            & h2 {
+                position: absolute;
+                font-size: 1em;
+                font-weight: normal;
+                width: 120px;
+                height: 1.8em;
+                top: -1.8em;
+                left: 10px;
+                padding: 0;
+                margin: 0;
+                color: #999;
+                background-color: #ddd;
+                border-radius: 5px 5px 0 0;
+                & a {
+                    display: block;
+                    width: 100%;
+                    line-height: 1.8em;
+                    text-align: center;
+                    text-decoration: none;
+                    color: inherit;
+                    outline: 0 none;
+                }
+            }
+        }
+    }
+
+    & article.tabs section,
+    & article.tabs section h2 {
+        transition: all 500ms ease;
+    }
+
+    & article.tabs section:target,
+    & article.tabs section:target h2 {
+        color: #333;
+        background-color: #fff;
+        z-index: 2;
+    }
+    & .owl-carousel .owl-nav {
+        display: block !important;
+    }
+    & .owl-nav {
+        margin: 0;
+    }
+    & .owl-nav button {
+        position: absolute !important;
+        top: 35%;
+        transform: translate(-50%, -35%);
+    }
+    & button.owl-prev {
+        height: 40px;
+        width: 40px;
+        left: 0%;
+        display: flex;
+        justify-content: center;
+        border-radius: 50% !important;
+        line-height: 1px;
+        color: $dark !important;
+        & span {
+            font-size: 35px;
+            position: absolute;
+            top: -40%;
+            left: -10%;
+        }
+    }
+    & button.owl-next {
+        height: 40px;
+        width: 40px;
+        right: 0%;
+        display: flex;
+        transform: translate(50%, -46%);
+        border-radius: 50% !important;
+        justify-content: center;
+        border-radius: 50%;
+        line-height: 1px;
+        color: $dark !important;
+        & span {
+            font-size: 35px;
+            position: absolute;
+            top: -40%;
+            left: 70%;
+        }
+    }
+    .owl-theme .owl-nav [class*="owl-"]:hover {
+        background-color: transparent;
+    }
+}
+// ========================= Diamondcategory end =======================
