@@ -182,4 +182,32 @@ button {
 
 button:disabled {
   opacity: 0.5;
+}
+
+.mainTable {
+  max-height: calc(100vh - 117px - 250px);
+  overflow: auto;
+  border-radius: 10px;
+}
+@media screen and (max-height: 650px) {
+  .mainTable {
+    max-height: calc(100vh - 117px - 0px);
+  }
+}
+.mainTable .primeTable {
+  width: 100%;
+  border-spacing: 0 4px;
+  border-collapse: separate;
+}
+.mainTable .primeTable .primeTable:first-child {
+  border-spacing: 0px;
+}
+.mainTable .primeTable th, .mainTable .primeTable thead {
+  background-color: rgb(241, 239, 255);
+  position: sticky;
+  padding: 10px 12px;
+  top: 0;
+  border-style: none !important;
+  z-index: 1;
+  color: #000000;
 }/*# sourceMappingURL=custom.css.map */

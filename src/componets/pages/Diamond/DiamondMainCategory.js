@@ -29,10 +29,10 @@ const DiamondMainCategory = () => {
 
     const responsive = {
         0: {
-            items: 1
+            items: 4
         },
         600: {
-            items: 1
+            items: 6
         },
         1000: {
             items: 6
@@ -111,8 +111,8 @@ const DiamondMainCategory = () => {
                             <article className='tabs'>
                                 {
                                     activeTab === 'tab1' && (
-                                        <section id="tab1">
-                                            <div className="col-6">
+                                        <section id="tab1" className='row'>
+                                            <div className="col-lg-6 col-md-12 col-sm-12 col-12">
                                                 <div>
                                                     <div className='diamondShapeTitle'>Diamond Shape</div>
                                                     <div className='pt-4'>
@@ -196,7 +196,7 @@ const DiamondMainCategory = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="col-6 ps-5">
+                                            <div className="col-lg-6 col-md-12 col-sm-12 col-12 ps-5">
                                                 <div className='carat'>
                                                     <div className='diamondShapeTitle'>Carat</div>
                                                     <div className="flex relative justify-center items-center h-20 w-full mx-auto rounded pt-4">
@@ -324,7 +324,85 @@ export default DiamondMainCategory
 
 export const TableDiamond = () => {
     return (
-        <div>dsgfd</div>
+        <div className="container">
+            <div className="row d-flex justify-content-center mainTable">
+                <div className="col-8">
+                    <table className='primeTable'>
+                        <thead>
+                            <tr >
+                                <th>
+                                    <button>All Diamonds</button>
+                                </th>
+                                <th>
+                                    <button>Truly Brilliant</button>
+                                </th>
+                                <th>
+                                    <button>Most Popular</button>
+                                </th>
+                                <th>
+                                    <button>Compare</button>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <table className='primeTable'>
+                        <thead>
+                            <tr >
+                                <th>
+                                    <button>Quick Ship</button>
+                                </th>
+                                <th>
+                                    <button>Real View</button>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <table className="table primeTable table-striped">
+
+                        <thead>
+                            <tr className=''>
+                                <th>Shape</th>
+                                <th>Price</th>
+                                <th>Carat</th>
+                                <th>Cut</th>
+                                <th>Color</th>
+                                <th>Clarity</th>
+                                <th>Compare</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Shape</td>
+                                <td>Price</td>
+                                <td>Carat</td>
+                                <td>Cut</td>
+                                <td>Color</td>
+                                <td>Clarity</td>
+                                <td>Compare</td>
+                            </tr>
+                            <tr>
+                                <td>Shape</td>
+                                <td>Price</td>
+                                <td>Carat</td>
+                                <td>Cut</td>
+                                <td>Color</td>
+                                <td>Clarity</td>
+                                <td>Compare</td>
+                            </tr>
+                            <tr>
+                                <td>Shape</td>
+                                <td>Price</td>
+                                <td>Carat</td>
+                                <td>Cut</td>
+                                <td>Color</td>
+                                <td>Clarity</td>
+                                <td>Compare</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div >
+        </div >
     )
 }
 

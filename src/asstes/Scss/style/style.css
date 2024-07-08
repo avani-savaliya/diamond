@@ -567,12 +567,10 @@
   line-height: 24.66px;
 }
 .diamondMainCategory article.tabs {
-  position: relative;
+  padding-top: 30px;
   display: block;
-  height: 200px;
 }
 .diamondMainCategory article.tabs section {
-  position: absolute;
   display: flex;
   top: 1.8em;
   width: 100%;
@@ -618,7 +616,6 @@
 }
 .diamondMainCategory article.tabs section .diamondOriginBtn {
   border-radius: 50px;
-  width: 48%;
   margin-right: 9.5px;
   font-weight: 600;
   line-height: 21.92px;
